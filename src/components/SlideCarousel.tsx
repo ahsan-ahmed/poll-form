@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import { IconButton } from '@mui/material';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
-
 
 const SlideCarousel = ({ items = [], currentSlideIndex, setCurrentSlideIndex }: any) => {
     const handleNext = () => {
