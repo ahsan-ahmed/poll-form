@@ -49,7 +49,8 @@ function App() {
 
         {/* Vertical Carousel */}
         <div style={{ backgroundColor: "#5D3FD3" }} className="text-white flex justify-center items-center text-5xl">
-          {currentIndex < 3 ? <VerticalCarousel items={pollData} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
+          {currentIndex < 3
+            ? <VerticalCarousel items={pollData} currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
             : <SlideCarousel items={pollData} currentSlideIndex={currentSlideIndex} setCurrentSlideIndex={setCurrentSlideIndex} />}
         </div>
 
