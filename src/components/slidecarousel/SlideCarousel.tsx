@@ -1,16 +1,21 @@
 import { IconButton } from '@mui/material';
 import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
-const SlideCarousel = ({ items = [], currentSlideIndex, setCurrentSlideIndex }: any) => {
+interface ISlideCarouselProps {
+    pollData: any[];
+    currentSlideIndex: number;
+    setCurrentSlideIndex: (currentIndex: any) => void;
+}
+const SlideCarousel = ({ pollData = [], currentSlideIndex, setCurrentSlideIndex }: ISlideCarouselProps) => {
     const handleNext = () => {
-        setCurrentSlideIndex((prevIndex: any) =>
-            prevIndex === items.length - 1 ? 0 : prevIndex + 1
+        setCurrentSlideIndex((prevIndex: number) =>
+            prevIndex === pollData.length - 1 ? 0 : prevIndex + 1
         );
     };
 
     const handlePrev = () => {
-        setCurrentSlideIndex((prevIndex: any) =>
-            prevIndex === 0 ? items.length - 1 : prevIndex - 1
+        setCurrentSlideIndex((prevIndex: number) =>
+            prevIndex === 0 ? pollData.length - 1 : prevIndex - 1
         );
     };
 
@@ -24,7 +29,7 @@ const SlideCarousel = ({ items = [], currentSlideIndex, setCurrentSlideIndex }: 
                     className="flex transition-transform duration-700"
                     style={{ transform: `translateX(-${currentSlideIndex * 100}%)` }}
                 >
-                    {items.map((item: any, index: number) => (
+                    {pollData.map((item: any, index: number) => (
                         <div
                             key={index}
                             className="min-w-64 h-64 flex items-center justify-center"
