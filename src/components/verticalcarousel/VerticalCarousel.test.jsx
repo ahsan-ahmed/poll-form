@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import VerticalCarousel from './VerticalCarousel';
 
 test("Vertical carousel renders successfully", () => {
-    render(<VerticalCarousel/>);
+    render(<VerticalCarousel />);
 
     const firstElement = screen.getByText(/How was you week overall?/i);
     expect(firstElement).toBeInTheDocument();

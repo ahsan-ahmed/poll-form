@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import SlideCarousel from './SlideCarousel';
 
 test("Slide carousel renders successfully", () => {
-    render(<SlideCarousel/>);
+    render(<SlideCarousel />);
 
     const firstElement = screen.getByText(/How was you week overall?/i);
     expect(firstElement).toBeInTheDocument();
